@@ -1,6 +1,6 @@
 import style from './Popup.module.css';
 
-export default function Popup() {
+export default function Popup({show}) {
     return (
         <div className={style.popup_container}>
             <div className="popup-content">
