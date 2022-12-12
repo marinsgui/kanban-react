@@ -1,35 +1,24 @@
 import { useState } from 'react'
 import './App.css'
+import TaskCard from './components/TaskCard/TaskCard'
 
-import Popup from './components/Popup';
+import style from './components/TaskCard/taskcard.module.css';
 
 function App() {
 
-  const [todoItem, setTodoItem] = useState([])
-  const [doingItem, setDoingItem] = useState([])
-  const [doneItem, setDoneItem] = useState([])
+  const [newTask, setNewTask] = useState([])
 
-  function addTodo(e) {
-    e.preventDefault()
-    
+  const addTask = () => {
+    setNewTask(prevState => {
+      return [...prevState, newTask]
+    })
   }
 
   return (
     <div className="App">
-      <div className="to-do">
-        <h2>A fazer</h2>
-        <button className='todo-btn' onClick={addTodo}>Adicionar nova tarefa</button>
-      </div>
-
-      <div className="doing">
-        <h2>Fazendo</h2>
-        <button className='doing-btn'>Adicionar nova tarefa</button>
-      </div>
-
-      <div className="done">
-        <h2>Feito</h2>
-        <button className='done-btn'>Adicionar nova tarefa</button>
-      </div>
+      <TaskCard className={style.to_do} title='A fazer' onAddTask={addTask} task={newTask} />
+      <TaskCard className={style.doing} title='Fazendo' />
+      <TaskCard className={style.done} title='Feito' />
     </div>
   )
 }

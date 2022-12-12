@@ -14,39 +14,3 @@ body {
   justify-content: center;
   gap: 2em;
 }
-
-.to-do, .doing, .done {
-  margin-top: 8em;
-  min-height: 15em;
-  min-width: 20em;
-  background-color: #fff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.616);
-  border-radius: 1em;
-}
-
-.to-do h2, .doing h2, .done h2 {
-  text-align: center;
-}
-
-.to-do {
-  background-color: rgba(232, 31, 31, 0.69);
-}
-
-.doing {
-  background-color: rgba(30, 30, 237, 0.69);
-}
-
-.done {
-  background-color: rgba(35, 231, 35, 0.69);
-}
-
-.to-do button, .doing button, .done button {
-  margin-left: 1em;
-  border: 1px solid #000;
-  padding: 0.5em;
-  cursor: pointer;
-}
-
-.to-do button:hover, .doing button:hover, .done button:hover {
-  background-color: rgba(255, 255, 255, 0.859);
-}
